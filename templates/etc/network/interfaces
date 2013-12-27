@@ -1,0 +1,123 @@
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interfaces
+auto eth0
+iface eth0 inet dhcp
+
+auto eth1
+iface eth1 inet static
+address 10.10.10.2
+netmask 255.255.0.0
+
+auto eth2
+iface eth2 inet static
+address 10.1.100.1
+netmask 255.255.0.0
+
+auto eth3
+iface eth3 inet static
+address 10.2.100.1
+netmask 255.255.0.0
+
+auto eth4
+iface eth4 inet static
+address 10.3.100.1
+netmask 255.255.0.0
+
+auto eth5
+iface eth5 inet static
+address 10.4.100.1
+netmask 255.255.0.0
+
+auto eth6
+iface eth6 inet static
+address 10.5.100.1
+netmask 255.255.0.0
+
+auto eth7
+iface eth7 inet static
+address 10.6.100.1
+netmask 255.255.0.0
+
+# ----- management network ----- 10.1
+
+auto eth2:2
+iface eth2:2 inet static
+address 10.1.0.2
+netmask 255.255.0.0
+
+auto eth2:3
+iface eth2:3 inet static
+address 10.1.0.3
+netmask 255.255.0.0
+
+auto eth2:4
+iface eth2:4 inet static
+address 10.1.0.4
+netmask 255.255.0.0
+
+auto eth2:5
+iface eth2:5 inet static
+address 10.1.0.5
+netmask 255.255.0.0
+
+# ----- api network ----- 10.2
+
+auto eth3:2
+iface eth3:2 inet static
+address 10.2.0.2
+netmask 255.255.0.0
+
+# ----- data network ----- 10.3
+
+auto eth4:3
+iface eth4:3 inet static
+address 10.3.0.3
+netmask 255.255.0.0
+
+auto eth4:4
+iface eth4:4 inet static
+address 10.3.0.4
+netmask 255.255.0.0
+
+# ----- external network ----- 10.4
+
+auto eth5:2
+iface eth5:2 inet static
+address 10.4.0.2
+netmask 255.255.0.0
+
+auto eth5:4
+iface eth5:4 inet static
+address 10.4.0.4
+netmask 255.255.0.0
+
+# ----- storage network ----- 10.5
+
+auto eth6:2
+iface eth6:2 inet static
+address 10.5.0.2
+netmask 255.255.0.0
+
+auto eth6:5
+iface eth6:5 inet static
+address 10.5.0.5
+netmask 255.255.0.0
+
+# ----- swift replication network ----- 10.6
+
+auto eth7:2
+iface eth7:2 inet static
+address 10.6.0.2
+netmask 255.255.0.0
+
+auto eth7:5
+iface eth7:5 inet static
+address 10.6.0.5
+netmask 255.255.0.0
+
