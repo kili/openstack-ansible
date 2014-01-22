@@ -4,8 +4,8 @@
   sudo: True
   gather_facts: True
   vars:
-    storage_ip: "{{ hostvars[ansible_hostname]|find_ip(storage_network) }}"
-    replication_ip: "{{ hostvars[ansible_hostname]|find_ip(replication_network) }}"
+    storage_ip: "{{ hostvars[inventory_hostname]|find_ip(storage_network) }}"
+    replication_ip: "{{ hostvars[inventory_hostname]|find_ip(replication_network) }}"
     component: swift
     packages:
       - python-xattr

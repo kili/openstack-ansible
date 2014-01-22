@@ -1,2 +1,2 @@
 ---
-volume_devices: [ sdc ]
+volume_devices: [ vdb, vdd, vdf, vdh ]

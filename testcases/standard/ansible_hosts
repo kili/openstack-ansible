@@ -1,7 +1,7 @@
-controller ansible_ssh_host=10.1.0.2
-compute ansible_ssh_host=10.1.0.3
-network ansible_ssh_host=10.1.0.4
-storage ansible_ssh_host=10.1.0.5
+controller ansible_ssh_host=192.168.11.3
+compute ansible_ssh_host=192.168.11.4
+#network ansible_ssh_host=192.168.11.3
+#storage ansible_ssh_host=192.168.11.4
 
 [all:vars]
 external_ntp_host = uk.pool.ntp.org
@@ -60,7 +60,7 @@ nova-compute
 controller
 
 [neutron-network]
-network
+controller
 
 [swift:children]
 swift-proxy
@@ -70,7 +70,7 @@ swift-storage
 controller
 
 [swift-storage]
-storage
+compute
 
 [cinder:children]
 cinder-api
@@ -84,7 +84,7 @@ controller
 controller
 
 [cinder-volume]
-storage
+compute
 
 [dashboard]
 controller
