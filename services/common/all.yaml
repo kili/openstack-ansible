@@ -60,8 +60,7 @@
     - name: set clocks to public ntp server
       command: ntpdate {{ external_ntp_host }}
       ignore_errors: yes
-
-    - register: ntpdate_result
+      register: ntpdate_result
       until: ntpdate_result|success
       retries: 5
       delay: 5
