@@ -93,9 +93,9 @@
         cache_valid_time: 600
       with_items:
         - openvswitch-datapath-dkms
-              #- build-essential
-              #- dkms
-          #- openvswitch-datapath-source
+        - build-essential
+        - dkms
+        - openvswitch-datapath-source
 
     - name: build openvswitch-datapath kernel module - this may take a while
       command: /usr/bin/module-assistant -i auto-install openvswitch-datapath
