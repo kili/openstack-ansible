@@ -65,7 +65,7 @@
 
     - name: mount nova storage directory
       mount: 
-        name: /srv/node/{{ component }}
+        name: /var/lib/{{ component }}
         src: /dev/{{ guest_root_device }}
         fstype: xfs 
         opts: noatime,nodiratime,nobarrier,logbufs=8
