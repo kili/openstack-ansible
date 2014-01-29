@@ -1,2 +1,3 @@
 ---
 nova_compute_package: nova-compute-qemu
+guest_root_device: vdj
