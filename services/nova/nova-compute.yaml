@@ -6,6 +6,8 @@
   hosts: nova-compute
   sudo: True
   gather_facts: True
+  vars:
+    component: nova
   tasks:
 
     - name: ensure /boot/vmlinuz is world-readable
