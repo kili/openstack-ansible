@@ -85,13 +85,6 @@
         dest: /etc/neutron/plugin.ini 
         state: link
 
-    - name: ensure OVS kernel module is loaded
-      modprobe: 
-        name: openvswitch
-        state: present
-      ignore_errors: True
-      register: modprobe_result
-
     - name: ensure packages to build openvswitch module are installed
       apt: 
         pkg: "{{ item }}" 
@@ -103,11 +96,9 @@
         - dkms
         - openvswitch-datapath-dkms
         - openvswitch-datapath-source
-      when: modprobe_result|failed
 
     - name: build openvswitch-datapath kernel module - this may take a while
       command: /usr/bin/module-assistant -i auto-install openvswitch-datapath
-      when: modprobe_result|failed
 
     # apparently this needs a restart when the module is built...
     - name: ensure openvswitch-switch is started and enabled
