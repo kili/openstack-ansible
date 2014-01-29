@@ -89,8 +89,8 @@
       modprobe: 
         name: openvswitch
         state: present
-        ignore_errors: True
-        register: modprobe_result
+      ignore_errors: True
+      register: modprobe_result
 
     - name: ensure packages to build openvswitch module are installed
       apt: 
