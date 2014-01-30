@@ -13,6 +13,27 @@
     - name: ensure /boot/vmlinuz is world-readable
       shell: chmod 0644 /boot/vmlinuz*
 
+    - name: create filesystem on guest_root devices
+      filesystem:
+        dev: /dev/{{ guest_root_device }}
+        fstype: xfs
+
+    - name: create nova storage directory
+      file:
+        path: /var/lib/{{ component }}
+        owner: "{{ component }}"
+        group: "{{ component }}"
+        mode: 0750
+        state: directory
+
+    - name: mount nova storage directory
+      mount: 
+        name: /var/lib/{{ component }}
+        src: /dev/{{ guest_root_device }}
+        fstype: xfs 
+        opts: noatime,nodiratime,nobarrier,logbufs=8
+        state: mounted
+
     - name: ensure nova-compute packages are installed
       apt: 
         pkg: "{{ item }}"
@@ -49,24 +70,3 @@
         name: nova-compute 
         state: restarted 
         enabled: yes
-
-    - name: create filesystem on guest_root devices
-      filesystem:
-        dev: /dev/{{ guest_root_device }}
-        fstype: xfs
-
-    - name: create nova storage directory
-      file:
-        path: /var/lib/{{ component }}
-        owner: "{{ component }}"
-        group: "{{ component }}"
-        mode: 0750
-        state: directory
-
-    - name: mount nova storage directory
-      mount: 
-        name: /var/lib/{{ component }}
-        src: /dev/{{ guest_root_device }}
-        fstype: xfs 
-        opts: noatime,nodiratime,nobarrier,logbufs=8
-        state: mounted
