@@ -16,13 +16,13 @@
     - name: create filesystem on guest_root devices
       filesystem:
         dev: /dev/{{ guest_root_device }}
-        fstype: xfs
+        fstype: ext4
 
-    - name: mount nova storage directory
+    - name: mount nova guest_root storage directory
       mount: 
         name: /var/lib/{{ component }}
         src: /dev/{{ guest_root_device }}
-        fstype: xfs 
+        fstype: ext4
         opts: noatime,nodiratime,nobarrier,logbufs=8
         state: mounted
 
