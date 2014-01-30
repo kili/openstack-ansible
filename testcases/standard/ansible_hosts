@@ -9,13 +9,15 @@ api_network = 10.2.0.0/16
 
 external_network_name = public
 
+public_address = dash.kili.io
+
 [neutron:vars]
 data_network = 10.3.0.0/16
-external_network = 10.186.43.0/24
-external_network_gateway_ip = 10.186.43.1
+external_network = 10.4.0.0/24
+external_network_gateway_ip = 10.4.0.1
 external_network_dns_nameservers = 8.8.8.8
-external_network_allocation_pool_start = 10.186.43.80
-external_network_allocation_pool_end = 10.186.43.99
+external_network_allocation_pool_start = 10.4.100.0
+external_network_allocation_pool_end = 10.4.200.255
 
 [swift:vars]
 storage_network = 10.5.0.0/16
