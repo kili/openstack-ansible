@@ -23,7 +23,7 @@
         name: /var/lib/{{ component }}
         src: /dev/{{ guest_root_device }}
         fstype: ext4
-        opts: noatime,nodiratime,nobarrier,logbufs=8
+        opts: noatime,nodiratime,nobarrier
         state: mounted
 
     - name: ensure nova-compute packages are installed
