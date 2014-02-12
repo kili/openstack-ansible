@@ -1,5 +1,5 @@
-controller ansible_ssh_host=10.0.0.2
-compute ansible_ssh_host=10.0.0.3
+controller ansible_ssh_host=10.1.0.2
+compute ansible_ssh_host=10.1.0.3
 
 [all:vars]
 external_ntp_host = uk.pool.ntp.org
