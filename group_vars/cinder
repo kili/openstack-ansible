@@ -1,2 +1,5 @@
 ---
-volume_devices: [ vdb, vdd, vdf, vdh ]
+volume_devices: ["disk1/cinder",
+                 "disk2/cinder",
+                 "disk3/cinder",
+                 "disk4/cinder",]
