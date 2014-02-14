@@ -1,5 +1,5 @@
 ---
-volume_devices: ["disk1/cinder",
-                 "disk2/cinder",
-                 "disk3/cinder",
-                 "disk4/cinder",]
+volume_devices: ["sda6",
+                 "sdb6",
+                 "sdc6",
+                 "sdd6",]
