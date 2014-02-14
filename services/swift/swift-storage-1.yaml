@@ -50,6 +50,7 @@
         name: "{{ item }}"
         state: stopped
       with_items: services
+      ignore_errors: yes
 
     - name: ensure {{ component }} sqlite is deleted
       file: 
