@@ -107,3 +107,6 @@ ceilometer_rabbit_password: "{{ lookup('password', inventory_dir + '/credentials
 ceilometer_identity_password: "{{ lookup('password', inventory_dir + '/credentials/ceilometer-identity-password') }}"
 metering_shared_secret: "{{ lookup('password', inventory_dir + '/credentials/metering-shared-secret') }}"
 
+horizon_dashboard_db_password: "{{ lookup('password', inventory_dir + '/credentials/horizon_dashboard_db_password') }}"
+horizon_email_host: "127.0.0.1"
+horizon_email_port: "25"

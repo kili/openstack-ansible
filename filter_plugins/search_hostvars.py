@@ -1,8 +1,6 @@
 from netaddr import IPNetwork, IPAddress
 
 def find_ip(*a, **kw):
-    import pdb
-    #pdb.set_trace()
     facts = a[0]
     network = IPNetwork(a[1])
     for addr_txt in facts['ansible_all_ipv4_addresses']:
