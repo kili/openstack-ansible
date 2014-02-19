@@ -466,7 +466,7 @@ DATABASES = {
                     'NAME': 'horizon_dashboard',
                     'USER': 'horizon',
                     'PASSWORD': '{{ horizon_dashboard_db_password }}'
-                    'HOST': '10.1.0.2',
+                    'HOST': '{{ keystone_endpoint_host }}',
                     'PORT': '3306',
                 },
 }
