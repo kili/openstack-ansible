@@ -465,7 +465,7 @@ DATABASES = {
                     'ENGINE': 'django.db.backends.mysql',
                     'NAME': 'horizon_dashboard',
                     'USER': 'horizon',
-                    'PASSWORD': '{{ horizon_dashboard_db_password }}'
+                    'PASSWORD': '{{ horizon_dashboard_db_password }}',
                     'HOST': '{{ keystone_endpoint_host }}',
                     'PORT': '3306',
                 },
