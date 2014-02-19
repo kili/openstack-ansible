@@ -46,6 +46,14 @@
         group: root
         mode: 0644
 
+    - name: install apache dashboard conf
+      template:
+        src: templates/etc/apache2/conf-available/openstack-dashboard.conf
+        dest: /etc/apache2/conf-available/openstack-dashboard.conf
+        owner: root
+        group: root
+        mode: 0644
+
     - name: ensure services are started and enabled
       service:
         name: "{{ item }}"
