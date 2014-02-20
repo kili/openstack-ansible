@@ -473,6 +473,8 @@ DATABASES = {
 
 AUTH_USER_MODEL = 'kili.User'
 
+DEFAULT_ROLES = ["Member",]
+
 SITE_ID = 1 
 
 ACCOUNT_AUTHENTICATION_METHOD = "email"
