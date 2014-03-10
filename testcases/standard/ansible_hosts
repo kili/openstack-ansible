@@ -57,10 +57,10 @@ neutron-network
 nova-compute
 
 [neutron-api]
-controller
+compute
 
 [neutron-network]
-controller
+compute
 
 [swift:children]
 swift-proxy
