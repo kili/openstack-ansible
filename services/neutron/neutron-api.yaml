@@ -81,6 +81,7 @@
         provider_network_type: gre
         provider_segmentation_id: 6
         state: present
+      ignore_errors: True
 
     - name: ensure subnet for external network is registered
       neutron_subnet:
@@ -97,4 +98,4 @@
         allocation_pool_start: "{{ external_network_allocation_pool_start }}"
         allocation_pool_end: "{{ external_network_allocation_pool_end }}"
         state: present
-
+      ignore_errors: True
