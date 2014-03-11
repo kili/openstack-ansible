@@ -1,3 +1,5 @@
 ---
-nova_compute_package: nova-compute-kvm
-guest_root_device: md3
+nova_conf:
+  staging:
+    nova_compute_package: nova-compute-kvm
+    guest_root_device: sda5
