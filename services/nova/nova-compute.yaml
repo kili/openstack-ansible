@@ -26,6 +26,14 @@
         opts: noatime,nodiratime,nobarrier
         state: mounted
 
+    - name: fix permissions of nova guest root mountpoint
+      file:
+        path: /var/lib/{{ component }}
+        state: directory
+        owner: nova 
+        group: nova 
+        mode: 0755
+
     - name: ensure nova-compute packages are installed
       apt: 
         pkg: "{{ item }}"
