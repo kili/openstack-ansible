@@ -1,7 +1,4 @@
 ---
 cinder_conf:
   staging:
-    volume_devices: ["sda6",
-                     "sdb6",
-                     "sdc6",
-                     "sdd6",]
+    volume_devices: ["sda6",]

@@ -15,13 +15,13 @@
 
     - name: create filesystem on guest_root devices
       filesystem:
-        dev: /dev/{{ groups['nova']['nova_conf'][env_name].guest_root_device }}
+        dev: /dev/{{ hostvars[groups['nova'][0]]['nova_conf'][env_name].guest_root_device }}
         fstype: ext4
 
     - name: mount nova guest_root storage directory
       mount: 
         name: /var/lib/{{ component }}
-        dev: /dev/{{ groups['nova']['nova_conf'][env_name].guest_root_device }}
+        src: /dev/{{ hostvars[groups['nova'][0]]['nova_conf'][env_name].guest_root_device }}
         fstype: ext4
         opts: noatime,nodiratime,nobarrier
         state: mounted
@@ -33,7 +33,7 @@
         update_cache: yes 
         cache_valid_time: 600
       with_items:
-        - "{{ nova_compute_package }}"
+        - "{{ hostvars[groups['nova'][0]]['nova_conf'][env_name].nova_compute_package }}"
         - python-guestfs
       
     - name: ensure services are stopped

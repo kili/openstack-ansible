@@ -23,7 +23,7 @@
     - name: create cinder-volumes volume group
       lvg:
         vg: cinder-volumes
-        pvs: "/dev/{{ volume_devices|join(',/dev/') }}"
+        pvs: "/dev/{{ hostvars[groups['swift'][0]]['cinder_conf'][env_name].volume_devices|join(',/dev/') }}"
         state: present
 
     - name: ensure {{ component }}-{{ subcomponent }} packages are installed
