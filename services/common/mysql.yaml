@@ -36,6 +36,7 @@
         name: root 
         host: localhost 
         password: "{{ mysql_root_password }}"
+        state: present
 
     # Need to do this for idempotency, see
     # http://ansible.cc/docs/modules.html#mysql-user
