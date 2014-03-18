@@ -1,4 +1,4 @@
-main1 ansible_ssh_host=10.186.43.2
+main1 ansible_ssh_host=192.168.11.4
 
 [all:vars]
 external_ntp_host = uk.pool.ntp.org
