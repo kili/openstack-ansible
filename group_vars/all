@@ -52,11 +52,11 @@ swift_public_url: https://{{ public_api_address }}/swift/v1/AUTH_%(tenant_id)s
 cinder_endpoint_host: "{{ hostvars[groups['cinder-api'][0]]|find_ip(management_network) }}"
 cinder_internal_url: http://{{ cinder_endpoint_host }}:8776/v1/%(tenant_id)s
 cinder_admin_url: "{{ cinder_internal_url }}"
-cinder_public_url: https://{{ public_api_address }}/cinder/v1/%(tenant_id)s
+cinder_public_url: https://{{ public_api_address }}/v1/cinder/%(tenant_id)s
 
 cinderv2_internal_url: http://{{ cinder_endpoint_host }}:8776/v2/%(tenant_id)s
 cinderv2_admin_url: "{{ cinderv2_internal_url }}"
-cinderv2_public_url: https://{{ public_api_address }}/cinder/v2/%(tenant_id)s
+cinderv2_public_url: https://{{ public_api_address }}/v2/cinder/%(tenant_id)s
 
 heat_endpoint_host: "{{ hostvars[groups['heat'][0]]|find_ip(management_network) }}"
 heat_internal_url: http://{{ heat_endpoint_host }}:8004/v1/%(tenant_id)s
