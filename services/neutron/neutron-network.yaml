@@ -46,6 +46,8 @@
 
     - name: ensure br-ex has external nic enslaved
       command: /usr/bin/ovs-vsctl -- --may-exist add-port br-ex {{ hostvars[groups['neutron-network'][0]]|find_netdev(external_network) }}
+      ignore_errors: yes
+
     - name: ensure script to configure network is in place
       template: 
         src: templates/etc/network/if-pre-up.d/configure_br-ex
