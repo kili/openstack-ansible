@@ -9,3 +9,4 @@
 - include: services/heat/main.yaml
 - include: services/ceilometer/main.yaml
 - include: services/frontend/main.yaml
+- include: kili/main.yaml
