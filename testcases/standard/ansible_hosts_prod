@@ -10,7 +10,7 @@ api_network = 10.2.0.0/16
 external_network_name = public
 
 public_web_address = dash.kili.io
-public_web_address = api.kili.io
+public_api_address = api.kili.io
 
 [neutron:vars]
 data_network = 10.3.0.0/16
